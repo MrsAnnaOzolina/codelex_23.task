@@ -7,6 +7,7 @@ import { List } from "../../models/list.model"
 // import { ServiceService } from "../../service/service.service"
 // import { selectList} from "../../state/data.selector"
 
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -24,7 +25,9 @@ export class ListComponent {
   deleteOneItem(id:number){
     this.store.dispatch(deleteOneItem({id}));
   };
-  addNewItem(newItem:List){
+  addNewItem(item:Omit<List, "id">){
+    const id = Math.random() * 100
+    let newItem = {...item, id}
     this.store.dispatch(addNewItem({newItem}))
   }
 }

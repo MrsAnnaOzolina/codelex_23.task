@@ -5,9 +5,13 @@
       <p *ngIf="nameAdded.touched && nameAdded.invalid && inputData.submitted" class="formText"> Name should be at least
         5 symbols long and npt longer then 20 symbols</p>
       <p *ngIf="!typeAdded.touched && inputData.submitted" class="formText"> Please choose type</p>
-      <form #inputData="ngForm" (ngSubmit)="addNewItem(inputData.form.value)">
-        <label for="id"></label>
-        <input #idAdded="ngModel" type="number" name="id" class="form-control inputForm__id" placeholder="id" ngModel>
+      <form 
+      #inputData="ngForm" 
+      (ngSubmit)="addNewItem(inputData.form.value); inputData.reset()"
+     
+      >
+        <!-- <label for="id"></label>
+        <input required #idAdded="ngModel" type="number" name="id" class="form-control inputForm__id" placeholder="id" ngModel> -->
         <label for="name"></label>
         <input #nameAdded="ngModel" required minlength="5" maxlength="20" type="text" name="name"
           class="form-control inputForm__name" placeholder="to do..." ngModel>
@@ -17,7 +21,12 @@
           <option value="shop">shop</option>
           <option value="work">work</option>
         </select>
-        <button class="form_button" type="submit"> Add </button>
+        <button 
+        [disabled]="!inputData.form.valid"
+
+        class="form_button" type="submit"
+       
+        > Add </button>
       </form>
     </div>
   </div>
@@ -27,7 +36,11 @@
     <p class="oneItem__text2">{{item.type}} </p>
     <span class="oneItem__text2">{{item.name}}</span>
     <span class="oneItem__text">
-      <button class="oneItem__delete" (click)="deleteOneItem(item.id)">x</button>
+      <button 
+      
+      class="oneItem__delete" (click)="deleteOneItem(item.id)"
+     
+      >x</button>
     </span>
   </div>
 </div>

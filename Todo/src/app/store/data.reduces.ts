@@ -1,6 +1,7 @@
 // import {showListSuccessfully, showList} from "./data.actions";
 import { createReducer, on } from '@ngrx/store';
 import { List } from "../models/list.model"
+import { addNewItem,deleteOneItem } from './data.actions';
 
 export const initialState: List[] =[
         {
@@ -17,9 +18,20 @@ export const initialState: List[] =[
  ;
 
 export const listReducer = createReducer(
-    initialState
-    // on(showListSuccessfully, (state, {myList})=>{
-    //     return {...state,
-    //         myList}
-    // })
+    initialState,
+    on(deleteOneItem, (state, {id}) => {
+       const list = state.filter((list) => list.id !== id );
+       return list;
+    }),
+    on(addNewItem, (state, {newItem}) => {
+        const newState = state.push(newItem)
+        console.log(state)
+        return  state
+
+        // return newState
+        // return {
+        //     ...state,
+        //     list: [...state, newItem]
+        // }
+     }),
 )

@@ -24,14 +24,18 @@ export const listReducer = createReducer(
        return list;
     }),
     on(addNewItem, (state, {newItem}) => {
-        const newState = state.push(newItem)
-        console.log(state)
-        return  state
+        // const newArray = state
+        //  newArray.push(newItem)
+    //   return {
 
-        // return newState
-        // return {
-        //     ...state,
-        //     list: [...state, newItem]
-        // }
+    //     ...state,
+    //     newItem: newItem
+    //   }
+
+      const newArray: List[] = JSON.parse(JSON.stringify(state));
+      newArray.push(newItem);
+    return newArray;
+            
+        
      }),
 )

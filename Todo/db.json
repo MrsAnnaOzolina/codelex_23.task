@@ -1,0 +1,39 @@
+{
+  "myList": [
+    {
+      "id": 2,
+      "name": "buy carrots",
+      "type": "shop"
+    },
+    {
+      "name": "clean house ",
+      "type": "home",
+      "id": 4
+    },
+    {
+      "name": "buy milk",
+      "type": "shop",
+      "id": 5
+    },
+    {
+      "name": "do Lauras tasks",
+      "type": "work",
+      "id": 10
+    },
+    {
+      "name": "go to shop",
+      "type": "shop",
+      "id": 11
+    },
+    {
+      "name": "do Annas tasks",
+      "type": "work",
+      "id": 12
+    },
+    {
+      "name": "finish  report",
+      "type": "work",
+      "id": 13
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+<div class="content">
+    <h1>My To do list</h1>
+<div *ngFor="let item of list$ | async" class="oneItem">
+    <p class="oneItem__text2">{{item.type}} </p>
+    <span class="oneItem__text2">{{item.name}}</span >
+      <span class="oneItem__text">
+        <button
+        class="oneItem__delete" 
+        >x</button>
+      </span>
+    </div>
+</div>
+<!-- <p>{{list$}}</p> -->
+
+<!-- The routed views render in the <router-outlet>-->
+<router-outlet></router-outlet>

@@ -8,4 +8,5 @@ Here is preview:
 ![ Alt text](Todo.gif)
 
 Delete items: 
+
 ![ Alt text](Tdod2.gif)

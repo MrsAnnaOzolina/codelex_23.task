@@ -7,5 +7,5 @@ Here is preview:
 
 ![ Alt text](Todo.gif)
 
----
+Delete items: 
 ![ Alt text](Todo2.gif)

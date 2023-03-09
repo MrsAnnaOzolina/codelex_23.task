@@ -13,7 +13,13 @@ export const initialState: List[] =[
         id:2,
         name: "clean house ",
         type: "house"
+    },
+    {
+        id:3,
+        name: "buy milk",
+        type: "shop"
     }
+
 ]
  ;
 
@@ -24,18 +30,8 @@ export const listReducer = createReducer(
        return list;
     }),
     on(addNewItem, (state, {newItem}) => {
-        // const newArray = state
-        //  newArray.push(newItem)
-    //   return {
-
-    //     ...state,
-    //     newItem: newItem
-    //   }
-
       const newArray: List[] = JSON.parse(JSON.stringify(state));
       newArray.push(newItem);
     return newArray;
-            
-        
      }),
 )
